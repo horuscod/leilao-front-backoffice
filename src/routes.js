@@ -52,6 +52,57 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
+  {
+    path: '/produtos',
+    name: 'Produtos',
+    element: Colors,
+  },
+  {
+    path: '/produtos/todos-os-produtos',
+    name: 'Todos os Produtos',
+    element: Colors,
+  },
+  {
+    path: '/pacotes',
+    name: 'Pacotes',
+    element: Colors,
+  },
+  {
+    path: '/pacotes/todos-os-pacotes',
+    name: 'Todos os Pacotes',
+    element: Colors,
+  },
+  {
+    path: '/campeoes',
+    name: 'Campeões',
+    element: Colors,
+  },
+  {
+    path: '/campeoes/todos-os-campeoes',
+    name: 'Todos os Campeões',
+    element: Colors,
+  },
+  {
+    path: '/adminstrador',
+    name: 'Administradores',
+    element: Colors,
+  },
+  {
+    path: '/adminstrador/todos-os-administradores',
+    name: 'Todos os Administradores',
+    element: Colors,
+  },
+  {
+    path: '/editor',
+    name: 'Editor de Produto',
+    element: Colors,
+  },
+  {
+    path: '/editor/todos-os-editores',
+    name: 'Todos os Editores',
+    element: Colors,
+  },
+
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },

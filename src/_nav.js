@@ -25,19 +25,19 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Produtos',
-    to: '/theme/colors',
+    to: '/produtos/todos-os-produtos',
     icon: <CIcon icon={cilTags} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Pacotes',
-    to: '/theme/typography',
+    to: '/pacotes/todos-os-pacotes',
     icon: <CIcon icon={cilBullhorn} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Ganhadores',
-    to: '/theme/typography',
+    name: 'Campeões',
+    to: '/campeoes/todos-os-campeoes',
     icon: <CIcon icon={cilMoodVeryGood} customClassName="nav-icon" />,
   },
   {
@@ -47,13 +47,13 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Administradores',
-    to: '/charts',
+    to: '/adminstrador/todos-os-administradores',
     icon: <CIcon icon={cilContact} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Criador de Produtos',
-    to: '/charts',
+    to: '/editor/todos-os-editores',
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
   },
 ]
