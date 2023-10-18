@@ -1,5 +1,11 @@
 import React from 'react'
 
+//Nossa estrutura
+
+const Produtos = React.lazy(() => import('./views/produtos/Produtos'))
+const ViewProduct = React.lazy(() => import('./views/produtos/CreateProduct'))
+
+//Final da estrutura
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
@@ -55,12 +61,17 @@ const routes = [
   {
     path: '/produtos',
     name: 'Produtos',
-    element: Colors,
+    element: Produtos,
   },
   {
     path: '/produtos/todos-os-produtos',
     name: 'Todos os Produtos',
-    element: Colors,
+    element: Produtos,
+  },
+  {
+    path: '/produtos/create',
+    name: 'Novo Produto',
+    element: ViewProduct,
   },
   {
     path: '/pacotes',
