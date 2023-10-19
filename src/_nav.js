@@ -47,7 +47,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Administradores',
-    to: '/adminstrador/todos-os-administradores',
+    to: '/admin/all-admins',
     icon: <CIcon icon={cilContact} customClassName="nav-icon" />,
   },
   {

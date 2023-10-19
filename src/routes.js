@@ -5,6 +5,9 @@ import React from 'react'
 const Produtos = React.lazy(() => import('./views/produtos/Produtos'))
 const ViewProduct = React.lazy(() => import('./views/produtos/CreateProduct'))
 
+const AllAdministrators = React.lazy(() => import('./views/Administrators/Administrators'))
+const NewAdmin = React.lazy(() => import('./views/Administrators/CreateAdministrator'))
+
 //Final da estrutura
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
@@ -94,14 +97,19 @@ const routes = [
     element: Colors,
   },
   {
-    path: '/adminstrador',
+    path: '/admin',
     name: 'Administradores',
-    element: Colors,
+    element: AllAdministrators,
   },
   {
-    path: '/adminstrador/todos-os-administradores',
+    path: '/admin/all-admins',
     name: 'Todos os Administradores',
-    element: Colors,
+    element: AllAdministrators,
+  },
+  {
+    path: '/admin/newAdmin',
+    name: 'Novo Adminstrador do Sistema',
+    element: NewAdmin,
   },
   {
     path: '/editor',
