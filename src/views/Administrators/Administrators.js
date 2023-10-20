@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   CContainer,
   CTable,
+  CTableHead,
+  CTableRow,
+  CTableHeaderCell,
+  CTableDataCell,
+  CTableBody,
   CRow,
   CCol,
   CCard,
@@ -13,6 +18,30 @@ import {
 import { NavLink } from 'react-router-dom'
 
 const Administrators = () => {
+  const [dataUserItem, setDataUserItem] = useState([])
+  useEffect(() => {
+    fetch('https://leilao-a04a220e8c49.herokuapp.com/allUsersAdmin', {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro na solicitação: ${response.status}`)
+        }
+        return response.json()
+      })
+      .then((data) => {
+        setDataUserItem(data)
+        console.log(data)
+      })
+      .catch((error) => {
+        console.error('Erro na solicitação:', error)
+      })
+  }, [])
+
   const columns = [
     {
       key: 'name',
@@ -77,7 +106,27 @@ const Administrators = () => {
           <CCol>
             <CCard>
               <CCardBody>
-                <CTable columns={columns} items={items} />
+                <CTable>
+                  <CTableHead>
+                    <CTableRow>
+                      <CTableHeaderCell scope="col">Nome</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">E-mail de Acesso</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Data de Criação</CTableHeaderCell>
+                      <CTableHeaderCell scope="col">Ações</CTableHeaderCell>
+                    </CTableRow>
+                  </CTableHead>
+                  <CTableBody>
+                    {dataUserItem.map((item, index) => (
+                      <CTableRow key={index}>
+                        <CTableHeaderCell scope="row">{item.name}</CTableHeaderCell>
+                        <CTableDataCell>{item.email}</CTableDataCell>
+                        {console.log(item.dataCreated)}
+                        <CTableDataCell>Tem que converter a data</CTableDataCell>
+                        <CTableDataCell>Tem que add Icons Edit View e Remove</CTableDataCell>
+                      </CTableRow>
+                    ))}
+                  </CTableBody>
+                </CTable>
               </CCardBody>
             </CCard>
           </CCol>
