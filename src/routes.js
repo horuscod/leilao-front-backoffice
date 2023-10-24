@@ -2,8 +2,8 @@ import React from 'react'
 
 //Nossa estrutura
 
-const Produtos = React.lazy(() => import('./views/produtos/Produtos'))
-const ViewProduct = React.lazy(() => import('./views/produtos/CreateProduct'))
+const Produtos = React.lazy(() => import('./views/Products/Product'))
+const ViewProduct = React.lazy(() => import('./views/Products/CreateProduct'))
 
 const AllAdministrators = React.lazy(() => import('./views/Administrators/Administrators'))
 const NewAdmin = React.lazy(() => import('./views/Administrators/CreateAdministrator'))
