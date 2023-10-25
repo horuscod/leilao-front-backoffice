@@ -9,6 +9,7 @@ const AllAdministrators = React.lazy(() => import('./views/Administrators/Admini
 const NewAdmin = React.lazy(() => import('./views/Administrators/CreateAdministrator'))
 
 const AllEditors = React.lazy(() => import('./views/Editors/ListAllEditors'))
+const NewEditor = React.lazy(() => import('./views/Editors/CreateNewEditor'))
 
 const AllChampions = React.lazy(() => import('./views/Champions/ListAllChampions'))
 const AllPackages = React.lazy(() => import('./views/Packages/ListAllPackages'))
@@ -131,6 +132,11 @@ const routes = [
     path: '/editor/todos-os-editores',
     name: 'Todos os Editores',
     element: AllEditors,
+  },
+  {
+    path: '/editor/novo-editor',
+    name: 'Novo Editor',
+    element: NewEditor,
   },
 
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },

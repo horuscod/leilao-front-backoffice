@@ -52,8 +52,8 @@ const Administrators = () => {
             <CRow className="justify-content-end">
               <CCol>Visualize todos os Editores do Sistema</CCol>
               <CCol lg={2}>
-                <NavLink to="/admin/newAdmin">
-                  <CButton color="primary">Novo Admin</CButton>
+                <NavLink to="/editor/novo-editor">
+                  <CButton color="primary">Novo Editor</CButton>
                 </NavLink>
               </CCol>
             </CRow>
