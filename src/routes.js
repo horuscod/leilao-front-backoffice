@@ -9,6 +9,7 @@ const AllAdministrators = React.lazy(() => import('./views/Administrators/Admini
 const NewAdmin = React.lazy(() => import('./views/Administrators/CreateAdministrator'))
 
 const AllChampions = React.lazy(() => import('./views/Champions/ListAllChampions'))
+const AllPackages = React.lazy(()=> import('./views/Packages/ListAllPackages'))
 
 //Final da estrutura
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
@@ -81,12 +82,12 @@ const routes = [
   {
     path: '/pacotes',
     name: 'Pacotes',
-    element: Colors,
+    element: AllPackages,
   },
   {
     path: '/pacotes/todos-os-pacotes',
     name: 'Todos os Pacotes',
-    element: Colors,
+    element: AllPackages,
   },
   {
     path: '/campeoes',
