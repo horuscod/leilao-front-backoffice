@@ -51,9 +51,7 @@ const CreateProduct = () => {
 
   const ActionCreateProduct = (event) => {
     event.preventDefault()
-    alert('pegando')
     if (productData.name != '') {
-      alert('Passou')
       fetch('https://leilao-a04a220e8c49.herokuapp.com/newProduct', {
         method: 'POST',
         mode: 'cors',

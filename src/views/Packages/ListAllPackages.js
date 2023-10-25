@@ -48,7 +48,12 @@ const ListAllPackages = () => {
         <CCard>
           <CCardBody>
             <CRow className="justify-content-end">
-              <CCol>Visualize todos os Campeos</CCol>
+              <CCol>Visualize todos os Pacotes</CCol>
+              <CCol lg={2}>
+                <NavLink to="/pacotes/novo-pacote">
+                  <CButton color="primary">Novo Pacote</CButton>
+                </NavLink>
+              </CCol>
             </CRow>
           </CCardBody>
         </CCard>
