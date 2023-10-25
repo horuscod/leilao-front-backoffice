@@ -16,6 +16,7 @@ import {
   CPaginationItem,
 } from '@coreui/react'
 import { NavLink } from 'react-router-dom'
+import { format } from 'date-fns'
 
 const Administrators = () => {
   const [dataUserItem, setDataUserItem] = useState([])
@@ -116,15 +117,21 @@ const Administrators = () => {
                     </CTableRow>
                   </CTableHead>
                   <CTableBody>
-                    {dataUserItem.map((item, index) => (
-                      <CTableRow key={index}>
-                        <CTableHeaderCell scope="row">{item.name}</CTableHeaderCell>
-                        <CTableDataCell>{item.email}</CTableDataCell>
-                        {console.log(item.dataCreated)}
-                        <CTableDataCell>Tem que converter a data</CTableDataCell>
-                        <CTableDataCell>Tem que add Icons Edit View e Remove</CTableDataCell>
-                      </CTableRow>
-                    ))}
+                    {dataUserItem.map((item, index) => {
+                      const timestamp = item.dataCreated
+                      const date = new Date(
+                        timestamp._seconds * 1000 + timestamp._nanoseconds / 1000000,
+                      )
+                      const formattedDate = format(date, 'dd/MM/yyyy HH:mm:ss')
+                      return (
+                        <CTableRow key={index}>
+                          <CTableHeaderCell scope="row">{item.name}</CTableHeaderCell>
+                          <CTableDataCell>{item.email}</CTableDataCell>
+                          <CTableDataCell>{formattedDate}</CTableDataCell>
+                          <CTableDataCell>Tem que add Icons Edit View e Remove</CTableDataCell>
+                        </CTableRow>
+                      )
+                    })}
                   </CTableBody>
                 </CTable>
               </CCardBody>
